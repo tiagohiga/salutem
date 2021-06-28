@@ -9,13 +9,18 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { GrupoDestaquesComponent } from './grupo-destaques/grupo-destaques.component';
 
+import { CadastrarComponent } from './cadastrar/cadastrar.component';
+
 @NgModule({
   declarations: [
     AppComponent,
+
     MenuComponent,
     RodapeComponent,
     EntrarComponent,
-    GrupoDestaquesComponent
+    GrupoDestaquesComponent,
+    CadastrarComponent
+
   ],
   imports: [
     BrowserModule,
