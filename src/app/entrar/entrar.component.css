@@ -1,0 +1,16 @@
+.bg-principal{
+    background-color: rgba(12, 130, 185, 0.3);
+}
+
+.h-minimo{
+    height: 100vh;
+}
+
+.entrar-tamanho{
+    height: 550px;
+    width: 400px;
+}
+
+.fs-16{
+    font-size: 16pt;
+}
