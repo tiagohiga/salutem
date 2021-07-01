@@ -4,10 +4,11 @@
 
             <div class="row d-flex justify-content-center">
                 <div class="col-md-0">
-                    <div class="align-items-center card" style="height: 35rem; width: 20rem;">
+                    <div class="align-items-center card shadow mt-5 bgc" style="height: 54rem;">
                         <div class="card-body">
-                            <h4 class="text-center text-primary card-title">Salutem</h4>
-                            <h6 class="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h6>
+                            <h4 class="text-center fs">Salutem</h4>
+                            <h6 class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, quo enim assumenda deleniti.</h6>
+                            
                             <div class="form-group">
                                 <label for="nome">Nome</label>
                                 <input class="form-control" type="text" name="nome" id="nome"
@@ -15,9 +16,15 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="usuario">Usuario</label>
-                                <input class="form-control" type="text" name="usuario" id="usuario"
-                                placeholder="Seu usuario">
+                                <label for="email">Email</label>
+                                <input class="form-control" type="email" name="usuario" id="usuario"
+                                placeholder="Seu email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="foto">Foto</label>
+                                <input class="form-control" type="text" name="usuario" id="foto"
+                                placeholder="Link da foto">
                             </div>
 
                             <div class="form-group">
@@ -27,12 +34,23 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="tipo">Tipo de Usuário</label>
-                               <select class="form-group" name="tipo" id="tipo">
-                                <option>Selecione um tipo de usuário:</option>
-                                <option value="normal">Normal</option>
-                                <option value="medico">Medico</option>
-                               </select>
+                                <label for="senha">Senha</label>
+                                <input class="form-control" type="password" name="senha"
+                                id="senha" placeholder="Confirme sua senha">
+                            </div>
+
+                            <div class="form-group mt-4">
+                                <select class="form-group" style="width: 15rem;" name=tipo id="tipo">
+                                 <option>Selecione um tipo de usuário</option>
+                                 <option value="normal">Normal</option>
+                                 <option value="medico">Profissional da saúde</option>
+                                </select>
+                             </div>
+                            
+                            <div class="form-group input-crm">
+                                <label for="crm">Crm</label>
+                                <input class="form-control" type="text" crm="crm" id="crm"
+                                placeholder="Informe o Crm">
                             </div>
                             
                             <div class="d-flex justify-content-center">
@@ -41,8 +59,8 @@
                             <hr>
                             <div class="mt-2 mb-2 text-center">
                                 <p>Já possui uma conta?
-                                 <a routerLink="/entrar" class="text-info">Entrar</a>
                                 </p>
+                                <a routerLink="/entrar" class="text-info">Entrar</a>
                             </div>
                         </div>
                     </div>
