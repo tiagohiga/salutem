@@ -1,1 +1,11 @@
-<p>grupo works!</p>
+<div class="container shadow">
+    <div class="card mb-3" *ngFor='let item of listaGrupos'>
+        <img class="card-img-top" src="{{item.urlImagemGrupo}}" alt="Imagem de capa do card">
+        <div class="card-body">
+            <h5 class="card-title">{{item.temaGrupo}}</h5>
+            <p class="card-text">{{item.descricaoGrupo}}</p>
+            <p class="card-text"><small class="text-muted">{{item.categoriaGrupo}}</small></p>
+        </div>
+    </div>
+    
+</div>

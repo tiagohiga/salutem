@@ -1,15 +1,15 @@
 <nav class="navbar navbar-expand-lg navbar-light bg">
-  
-    <div class="collapse navbar-collapse" id="foto">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <img src="{{foto}}" alt="Imagem do user" width="50px" height="50px" class="img-fluid rounded-circle">
-        </li>
-        <li class="nav-item">
-          <p class="m-3">Olá, {{nome}}</p>
-        </li>
-      </ul>
-    </div>
+
+  <div class="collapse navbar-collapse" id="foto">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <img src="{{foto}}" alt="Imagem do user" width="50px" height="50px" class="img-fluid rounded-circle">
+      </li>
+      <li class="nav-item">
+        <p class="m-3">Olá, {{nome}}</p>
+      </li>
+    </ul>
+  </div>
   <div class="row d-flex pr-5">
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control" type="search" placeholder="Search" aria-label="Search">
@@ -18,35 +18,75 @@
 
   </div>
 
-    <div>
-      <a class="p-5 navbar-brand" href="#">Logo</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Notificação<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Mensagem</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Grupos
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" routerLink="/grupo">Seus Grupos</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Novo Grupo</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Sair</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <div>
+    <a class="p-5 navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Notificação<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Mensagem</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Grupos
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/grupo">Seus Grupos</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" data-toggle="modal" data-target="#ExemploModalCentralizado">Novo Grupo</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Sair</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-  
+<!-- Modal -->
+<div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalCentralizado">Criar novo grupo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cancelar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input [(ngModel)]="grupo.temaGrupo" type="text" class="form-control" id="nome" placeholder="Digite o nome do grupo">
+        </div>
+
+        <div class="form-group">
+          <label for="especialidade">Especialidade</label>
+          <input [(ngModel)]="grupo.categoriaGrupo" type="text" class="form-control" id="especialidade" placeholder="Digite sua especialidade">
+        </div>
+
+        <div class="form-group">
+          <label for="imagem">Imagem</label>
+          <input [(ngModel)]="grupo.urlImagemGrupo" type="text" class="form-control" id="imagem"  placeholder="Digite a URL da imagem">
+        </div>
+
+        <div class="form-group">
+          <label for="descricao">Descrição</label>
+          <textarea name="descricao" [(ngModel)]="grupo.descricaoGrupo" class="form-control" id="descricao" cols="30" rows="5"></textarea>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal ">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="cadastrar()">Criar</button>
+      </div>
+    </div>
+  </div>
+</div>

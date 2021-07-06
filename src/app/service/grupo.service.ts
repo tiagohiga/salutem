@@ -25,7 +25,8 @@ export class GrupoService {
     }
 
     postGrupo(grupo: Grupo): Observable<Grupo>{
-      return this.http.post<Grupo>('https://https://rssalutem.herokuapp.com/grupo/cadastrar', grupo, this.token)
+      return this.http.post<Grupo>('https://rssalutem.herokuapp.com/grupo/cadastrar', grupo, this.token)
     }
+
 
 }
