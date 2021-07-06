@@ -3,10 +3,10 @@
     <div class="collapse navbar-collapse" id="foto">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <img src="https://i.imgur.com/bNEtNdv.jpg" alt="Imagem Usuario" width="50px" height="50px" class="img-fluid rounded-circle">
+          <img src="{{foto}}" alt="Imagem do user" width="50px" height="50px" class="img-fluid rounded-circle">
         </li>
         <li class="nav-item">
-          <p class="m-3">Nome Usuario</p>
+          <p class="m-3">Olá, {{nome}}</p>
         </li>
       </ul>
     </div>
@@ -37,10 +37,9 @@
             Grupos
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" routerLink="/grupo">Seus Grupos</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="#">Novo Grupo</a>
           </div>
         </li>
         <li class="nav-item">
