@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  divVisivel = true
+  buscaVisivel = false
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  mostrarBusca(){
+    this.divVisivel = false
+    this.buscaVisivel = true
+  }
+
+  esconderPesquisa(){
+    this.divVisivel = true
+    this.buscaVisivel = false
   }
 
 }
