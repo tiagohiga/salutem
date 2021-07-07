@@ -31,13 +31,13 @@
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 510px) {
     .esconder-busca{
         display: none;
     }
 }
 
-@media screen and (min-width: 479px) {
+@media screen and (min-width: 510px) {
     .exibir-buscador{
         display: none;
     }
