@@ -1,15 +1,13 @@
+
 <div class="bg">
+<div class="container">
   <div class="navbar navbar-expand-lg py-0">
-    <a class="navbar-brand" href="#" *ngIf='this.divVisivel'>
-      <img class="img-fluid tamanho-logo" src="https://i.imgur.com/0BXiK8R.png" alt="Logo da Salutem" width="35px"
-        height="35px">
-    </a>
 
     <div class="mr-auto esconder-busca py-1">
       <form class="form-inline my-lg-0">
         <div class="input-group">
           <div class="input-group-prepend">
-            <button class="btn btn-primary borda" type="submit"><i class="fa fa-search fa-flip-horizontal" aria-hidden="true"></i>
+            <button class="btn btn-primary borda btn-dark" type="submit"><i class="fa fa-search fa-flip-horizontal" aria-hidden="true"></i>
             </button>
           </div>
           <input class="form-control borda border-right-0 border" type="input" placeholder="Procurar..." aria-label="Search">
@@ -24,7 +22,7 @@
     <div class="mr-auto exibir-buscador py-1">
       <div class="input-group">
         <div class="input-group-prepend">
-          <button class="btn btn-primary borda" type="submit"><i class="fa fa-search fa-flip-horizontal" aria-hidden="true" (click)='mostrarBusca()'></i>
+          <button class="btn btn-primary borda " type="submit"><i class="fa fa-search fa-flip-horizontal" aria-hidden="true" (click)='mostrarBusca()'></i>
           </button>
         </div>
         <input class="form-control borda teste" type="input" placeholder="Procurar..." aria-label="Search" *ngIf='this.buscaVisivel'>
@@ -35,33 +33,39 @@
       </div>
     </div>
 
+    <a class="navbar-brand" href="#" *ngIf='this.divVisivel'>
+      <img class="img-fluid tamanho-logo" src="https://i.imgur.com/0BXiK8R.png" alt="Logo da Salutem" width="50px"
+        height="35px">
+    </a>
+
     <div class="ml-auto" *ngIf='this.divVisivel'>
-      <ul class="navbar-nav list-inline no-gutters">
+      <ul class="navbar-nav list-inline">
         <div>
           <li class="list-inline-item text-center">
             <a class="nav-link d-flex flex-column botao" href="#">
-              <i class="fa fa-envelope-o fs-16 aumentar-icone" aria-hidden="true"></i>
-              <span class="fs-10 esconder-texto">Mensagens</span>
+              <i class="fa fa-envelope-o fs-16 aumentar-icone text-dark" aria-hidden="true"></i>
+              <span class="fs-10 esconder-texto text-dark">Mensagens</span>
             </a>
           </li>
 
           <li class="nav-item dropdown list-inline-item text-center">
             <a class="nav-link d-flex flex-column botao nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fa fa-users fs-16 aumentar-icone" aria-hidden="true"></i>
-              <span class="fs-10 esconder-texto">Grupos</span>
+              <i class="fa fa-users fs-16 aumentar-icone text-dark" aria-hidden="true"></i>
+              <span class="fs-10 esconder-texto text-dark">Grupos</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Criar Grupo</a>
+              <a class="dropdown-item" href="#">Meus Grupos</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
 
           <li class="list-inline-item text-center">
-            <a class="nav-link d-flex flex-column botao" href="#">
-              <i class="fa fa-user fs-16 aumentar-icone" aria-hidden="true"></i>
-              <span class="fs-10 esconder-texto">Nome</span>
+            <a class="nav-link d-flex flex-column" href="#">
+              <img class=" img-usuario rounded-circle " src="https://i.imgur.com/zvguzCb.png" alt="">
+              <!--<i class="fa fa-user fs-16 aumentar-icone text-dark " aria-hidden="true"></i>-->
+              <span class="fs-10 esconder-texto text-dark mt-1">Nome</span>
             </a>
           </li>
 
@@ -70,5 +74,6 @@
 
 
     </div>
-  </div>
+  </div> 
+</div>
 </div>
