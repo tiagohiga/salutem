@@ -12,10 +12,12 @@ import { GrupoService } from '../service/grupo.service';
 export class GrupoComponent implements OnInit {
 
   listaGrupos: Grupo[]
-
+  grupo: Grupo = new Grupo()
+  
   constructor(
     private grupoService: GrupoService,
     private router: Router
+    
   ) { }
 
   ngOnInit(){
@@ -30,4 +32,20 @@ export class GrupoComponent implements OnInit {
       this.listaGrupos = resp
     })
   }
+
+  pegarPorIdGrupo(id: number){
+    this.grupoService.getByIdGrupo(id).subscribe((resp: Grupo) =>{
+      this.grupo = resp
+    })
+    
+  }
+
+  deletarGrupo(id: number){
+    this.grupoService.deleteGrupo(id).subscribe(() =>{
+      alert('APAGOU!!!')
+      this.router.navigate(['/inicio'])
+
+    })
+  }
+
 }

@@ -14,6 +14,8 @@ import { GrupoDestaquesComponent } from './grupo-destaques/grupo-destaques.compo
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { GrupoComponent } from './grupo/grupo.component';
+import { GrupoEditarComponent } from './editar/grupo-editar/grupo-editar.component';
+import { GrupoDeletarComponent } from './deletar/grupo-deletar/grupo-deletar.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { GrupoComponent } from './grupo/grupo.component';
     GrupoDestaquesComponent,
     CadastrarComponent,
     InicioComponent,
-    GrupoComponent
+    GrupoComponent,
+    GrupoEditarComponent,
+    GrupoDeletarComponent
 
   ],
   imports: [
