@@ -3,11 +3,6 @@
     background-color: rgba(12,130,185,0.3) ;
 }
 
-.imgperfil{
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-}
 
 a{
     cursor: pointer;
@@ -57,11 +52,22 @@ a{
     border-radius: 33px;
 }
 
+.bordainput{
+    width: 19rem;
+}
 .navbar-nav .dropdown-menu {
     position: absolute;
 }
 
 .img-usuario{
     width: 30px;
-    object-position: 50% -20%
+    height: 30px;
+    object-fit: cover;
+}
+
+.imglogo{
+    width: 45px;
+    height: 45px;
+    align-items: flex-end;
+    object-fit: cover;
 }
