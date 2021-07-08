@@ -20,6 +20,7 @@ export class GrupoService {
       return this.http.get<Grupo[]>('https://rssalutem.herokuapp.com/grupo/todos', this.token)
     }
 
+
     getByIdGrupo(id: number): Observable<Grupo>{
       return this.http.get<Grupo>(`https://rssalutem.herokuapp.com/grupo/id/${id}`, this.token)
     }
@@ -28,5 +29,15 @@ export class GrupoService {
       return this.http.post<Grupo>('https://rssalutem.herokuapp.com/grupo/cadastrar', grupo, this.token)
     }
 
+    putGrupo(grupo: Grupo,id: number): Observable<Grupo>{
+
+      return this.http.put<Grupo>(`https://rssalutem.herokuapp.com/grupo/alterar/${id}`,grupo, this.token)
+    }
+
+    deleteGrupo(id: number){
+
+      return this.http.delete(`https://rssalutem.herokuapp.com/grupo/deletar/${id}`, this.token)
+      
+    }
 
 }
