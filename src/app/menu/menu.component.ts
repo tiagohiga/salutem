@@ -14,22 +14,33 @@ export class MenuComponent implements OnInit {
   grupo: Grupo = new Grupo()
   nome = environment.nomeUsuario
   foto = environment.urlImagemUsuario
-  
+  divVisivel = true
+  buscaVisivel = false
+
   constructor(
     private router: Router,
     private grupoService: GrupoService,
   ) { }
 
-  ngOnInit() { 
-   }
+  ngOnInit() {
+  }
 
-  cadastrar(){
-    this.grupoService.postGrupo(this.grupo).subscribe((resp:Grupo) =>{
+  cadastrar() {
+    this.grupoService.postGrupo(this.grupo).subscribe((resp: Grupo) => {
       this.grupo = resp
       alert("Grupo criadoo uhuuul!")
-      this.grupo= new Grupo()
+      this.grupo = new Grupo()
     })
+  }
 
+  mostrarBusca() {
+    this.divVisivel = false
+    this.buscaVisivel = true
+  }
+
+  esconderPesquisa() {
+    this.divVisivel = true
+    this.buscaVisivel = false
   }
 
 }

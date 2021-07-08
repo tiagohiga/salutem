@@ -1,58 +1,99 @@
-<nav class="navbar navbar-expand-lg navbar-light bg">
+<!-- Menu oficial-->
+<div class="bg">
+  <div class="container">
+    <div class="navbar navbar-expand-lg py-0">
 
-  <div class="collapse navbar-collapse" id="foto">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <img src="{{foto}}" alt="Imagem do user" width="50px" height="50px" class="img-fluid rounded-circle">
-      </li>
-      <li class="nav-item">
-        <p class="m-3">Olá, {{nome}}</p>
-      </li>
-    </ul>
-  </div>
-  <div class="row d-flex pr-5">
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+      <div class="mr-auto esconder-busca py-1">
+        <form class="form-inline my-lg-0">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <button class="btn btn-primary borda btn-dark" type="submit"><i class="fa fa-search fa-flip-horizontal"
+                  aria-hidden="true"></i>
+              </button>
+            </div>
+            <input class="form-control borda border-right-0 border" type="input" placeholder="Procurar..."
+              aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn btn-light borda border-left-0 border" type="button"><i class="fa fa-times"
+                  aria-hidden="true" (click)='esconderPesquisa()'></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
 
-  </div>
-
-  <div>
-    <a class="p-5 navbar-brand" href="#">Logo</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Notificação<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Mensagem</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Grupos
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="/grupo">Seus Grupos</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" data-toggle="modal" data-target="#ExemploModalCentralizado">Novo Grupo</a>
+      <div class="mr-auto exibir-buscador py-1">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <button class="btn btn-primary borda " type="submit"><i class="fa fa-search fa-flip-horizontal"
+                aria-hidden="true" (click)='mostrarBusca()'></i>
+            </button>
+          </div>
+          <input class="form-control borda teste" type="input" placeholder="Procurar..." aria-label="Search"
+            *ngIf='this.buscaVisivel'>
+          <div class="input-group-append">
+            <button class="btn btn-light borda border-left-0 border" type="button" *ngIf='this.buscaVisivel'
+              (click)='esconderPesquisa()'><i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Sair</a>
-      </li>
-    </ul>
+      </div>
+
+      <a class="navbar-brand" href="#" *ngIf='this.divVisivel'>
+        <img class="img-fluid tamanho-logo" src="https://i.imgur.com/0BXiK8R.png" alt="Logo da Salutem" width="50px"
+          height="35px">
+      </a>
+
+      <div class="ml-auto" *ngIf='this.divVisivel'>
+        <ul class="navbar-nav list-inline">
+          <div>
+            <li class="list-inline-item text-center">
+              <a class="nav-link d-flex flex-column botao" href="#">
+                <i class="fa fa-envelope-o fs-16 aumentar-icone text-dark" aria-hidden="true"></i>
+                <span class="fs-10 esconder-texto text-dark">Mensagens</span>
+              </a>
+            </li>
+
+            <li class="nav-item dropdown list-inline-item text-center">
+              <a class="nav-link d-flex flex-column botao nav-link" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-users fs-16 aumentar-icone text-dark" aria-hidden="true"></i>
+                <span class="fs-10 esconder-texto text-dark">Grupos</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" routerLink="/grupo">Seus Grupos</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" data-toggle="modal" data-target="#ExemploModalCentralizado">Novo Grupo</a>
+              </div>
+            </li>
+
+            <li class="list-inline-item text-center">
+              <a class="nav-link d-flex flex-column" href="#">
+                <img class=" img-usuario rounded-circle " src="{{foto}}" alt="Imagem do usuário">
+                <!--<i class="fa fa-user fs-16 aumentar-icone text-dark " aria-hidden="true"></i>-->
+                <span class="fs-10 esconder-texto text-dark mt-1">Olá,{{nome}}</span>
+              </a>
+            </li>
+
+            <li class="list-inline-item text-center">
+              <a class="nav-link d-flex flex-column botao" routerLink="/entrar">
+                <i class="fa fa-sign-out fs-16 aumentar-icone text-dark" aria-hidden="true"></i>
+                <span class="fs-10 esconder-texto text-dark">Sair</span>
+              </a>
+            </li>
+
+          </div>
+        </ul>
+
+
+      </div>
+    </div>
   </div>
-</nav>
+</div>
 
 <!-- Modal -->
-<div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+<div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog"
+  aria-labelledby="TituloModalCentralizado" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -64,22 +105,26 @@
       <div class="modal-body">
         <div class="form-group">
           <label for="nome">Nome</label>
-          <input [(ngModel)]="grupo.temaGrupo" type="text" class="form-control" id="nome" placeholder="Digite o nome do grupo">
+          <input [(ngModel)]="grupo.temaGrupo" type="text" class="form-control" id="nome"
+            placeholder="Digite o nome do grupo">
         </div>
 
         <div class="form-group">
           <label for="especialidade">Especialidade</label>
-          <input [(ngModel)]="grupo.categoriaGrupo" type="text" class="form-control" id="especialidade" placeholder="Digite sua especialidade">
+          <input [(ngModel)]="grupo.categoriaGrupo" type="text" class="form-control" id="especialidade"
+            placeholder="Digite sua especialidade">
         </div>
 
         <div class="form-group">
           <label for="imagem">Imagem</label>
-          <input [(ngModel)]="grupo.urlImagemGrupo" type="text" class="form-control" id="imagem"  placeholder="Digite a URL da imagem">
+          <input [(ngModel)]="grupo.urlImagemGrupo" type="text" class="form-control" id="imagem"
+            placeholder="Digite a URL da imagem">
         </div>
 
         <div class="form-group">
           <label for="descricao">Descrição</label>
-          <textarea name="descricao" [(ngModel)]="grupo.descricaoGrupo" class="form-control" id="descricao" cols="30" rows="5"></textarea>
+          <textarea name="descricao" [(ngModel)]="grupo.descricaoGrupo" class="form-control" id="descricao" cols="30"
+            rows="5"></textarea>
         </div>
 
       </div>
