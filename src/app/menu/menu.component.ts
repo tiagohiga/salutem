@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Grupo } from '../model/Grupo';
+import { Usuario } from '../model/Usuario';
 import { GrupoService } from '../service/grupo.service';
 
 @Component({
@@ -41,6 +42,11 @@ export class MenuComponent implements OnInit {
   esconderPesquisa() {
     this.divVisivel = true
     this.buscaVisivel = false
+  }
+
+  sair(){
+    environment.tokenUsuario = ''
+    this.router.navigate(['/entrar'])
   }
 
 }
