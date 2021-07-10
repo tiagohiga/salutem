@@ -21,6 +21,12 @@ a{
     opacity: 0.5;
 }
 
+@media screen and (min-width: 768px){
+    .bordainput{
+        width: 19rem;
+    }
+}
+
 @media screen and (min-width: 0px) and (max-width: 767px){
     .esconder-texto{
         display: none;
@@ -37,14 +43,15 @@ a{
     }
 }
 
-@media screen and (max-width: 510px) {
-    .esconder-busca{
+
+@media screen and (min-width: 592px) {
+    .exibir-buscador{
         display: none;
     }
 }
 
-@media screen and (min-width: 510px) {
-    .exibir-buscador{
+@media screen and (max-width: 592px) {
+    .esconder-busca{
         display: none;
     }
 }
@@ -53,9 +60,6 @@ a{
     border-radius: 33px;
 }
 
-.bordainput{
-    width: 19rem;
-}
 .navbar-nav .dropdown-menu {
     position: absolute;
 }

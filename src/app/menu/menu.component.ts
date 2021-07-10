@@ -18,12 +18,18 @@ export class MenuComponent implements OnInit {
   divVisivel = true
   buscaVisivel = false
 
+  nomeContainer: string
+  larguraTela: number
+
   constructor(
     private router: Router,
     private grupoService: GrupoService,
   ) { }
 
   ngOnInit() {
+    this.larguraTela = window.innerWidth
+    this.atribuirContainer()
+    console.log(this.nomeContainer)
   }
 
   cadastrar() {
@@ -47,6 +53,14 @@ export class MenuComponent implements OnInit {
   sair(){
     environment.tokenUsuario = ''
     this.router.navigate(['/entrar'])
+  }
+
+  atribuirContainer(){
+    if(this.larguraTela > 767){
+      this.nomeContainer = "container"
+    }else{
+      this.nomeContainer = "container-fluid"
+    }
   }
 
 }

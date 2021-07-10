@@ -1,6 +1,6 @@
 <!-- Menu oficial-->
 <div class="bg">
-  <div class="container">
+  <div class="{{this.nomeContainer}}">
     <div class="navbar navbar-expand-lg py-0">
 
       <a class="navbar-brand mt-2" href="#" *ngIf='this.divVisivel'>
@@ -30,7 +30,7 @@
       <div class="mr-auto exibir-buscador py-1">
         <div class="input-group">
           <div class="input-group-prepend">
-            <button class="btn btn-primary borda " type="submit"><i class="fa fa-search fa-flip-horizontal"
+            <button class="btn btn-primary borda btn-dark" type="submit"><i class="fa fa-search fa-flip-horizontal"
                 aria-hidden="true" (click)='mostrarBusca()'></i>
             </button>
           </div>
