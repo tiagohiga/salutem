@@ -6,3 +6,9 @@ a{
 a:hover{
     color: #004557;
 }
+
+.rodape {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
