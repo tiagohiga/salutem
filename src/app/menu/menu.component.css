@@ -1,6 +1,7 @@
 .bg
 {
-    background-color: rgba(12,130,185,0.3) ;
+    background:  -webkit-linear-gradient(right, #3699eb80 -5%, #206EAF 150%);
+
 }
 
 
@@ -60,14 +61,14 @@ a{
 }
 
 .img-usuario{
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     object-fit: cover;
 }
 
 .imglogo{
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
     align-items: flex-end;
     object-fit: cover;
 }
